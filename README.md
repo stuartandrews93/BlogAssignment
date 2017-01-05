@@ -1,13 +1,4 @@
-## Ani Theme - Free AngularJS Dashboard Starter Theme
-
-## [Demo](http://rawgit.com/start-angular/ani-theme/master/dist/index.html)
-
-Ani Theme is a Boilerplate for Animated AngularJS Starter Theme written with Bootstrap LESS. Powered by Gulp.
-![Preview](/examples/preview.png)
-
-Find out more [Free Angular Themes at StartAngular.com](http://www.startangular.com/).
-
-## Installation
+## Installation and Running
 1. Clone this project or Download that ZIP file
 2. Install Node, Bower and Gulp
 	2.1. Steps for Node
@@ -23,7 +14,12 @@ Find out more [Free Angular Themes at StartAngular.com](http://www.startangular.
 - cd `project-directory`
 - `bower install`
 - `npm install`
-- `gulp serve` - For development mode
-- `gulp build` - concat, minify and generate the files for deployment
+- `gulp serve`
 - Open browser and go to localhost:9000
 - Login with the details: email - someone@gmail.com and password - Password2.
+
+## Technologies and Themes
+1. Firebase
+2. AngularJS
+3. HTML/CSS
+4. Bootstrap
