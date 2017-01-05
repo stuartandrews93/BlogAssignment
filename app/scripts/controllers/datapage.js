@@ -51,9 +51,11 @@ controller('DatapageCtrl', function ($scope) {
         {
           var user = firebase.auth().currentUser;
           firebase.database().ref('/blogs/' + user.uid + '/' + $scope.id + '/').update({
-            post: $scope.post
+            post: $scope.post,
+            title: $scope.title
           });
           $scope.allPosts[$scope.key].post = $scope.post;
+          $scope.allPosts[$scope.key].title = $scope.title;
         }
       };
 
