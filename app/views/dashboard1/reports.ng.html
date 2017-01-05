@@ -1,12 +1,14 @@
 <div>
 	<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
-	<h2>Reports <small>Work with Chart.js and D3</small></h2>
 	<div class="jumbotron">
 		<div class="container">
 			<h1>New Blog Post</h1>
 			<form>
+                <div class="form-group">
+                    <input class="form-control" ng-model="title" rows="10" id="title" placeholder="Enter your blog title here!" required></input>
+                </div>
 				<div class="form-group">
-					<textarea class="form-control" ng-model="blog" rows="10" id="post"></textarea>
+					<textarea class="form-control" ng-model="blog" rows="10" id="post" placeholder="So what's up? Add a new entry here..." required></textarea>
 				</div>
 				<button type="submit" ng-click="submit()" class="btn btn-default">Submit</button>
 			</form>

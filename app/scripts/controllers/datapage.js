@@ -3,35 +3,44 @@
 angular.module('yapp').
 controller('DatapageCtrl', function ($scope) {
     $scope.allPosts = null;
+    $scope.allPostNull = false;
     $scope.id = null;
+    $scope.title = null;
     $scope.post = null;
     $scope.key = null;
-    fetchPosts();
     fetchPosts();
 
     console.log($scope.allPosts);
 
 
-    function fetchPosts() {
+    function fetchPosts()
+    {
       var user = firebase.auth().currentUser;
 
       var referenceLink = "/blogs/" + user.uid;
       var data = firebase.database().ref(referenceLink);
 
-      data.once('value').then(function (snapshot) {
+      data.once('value').then(function (snapshot)
+      {
         $scope.allPosts = [];
-        snapshot.forEach(function (d) {
+        var count = 0;
+        snapshot.forEach(function (d)
+        {
           $scope.allPosts.push(d.val());
+          count++;
         });
         $scope.$apply();
+        if(count == 0)
+        {
+          $scope.allPostNull = true;
+        }
       });
     }
 
-      $scope.saveMessageID = function (key,post,id)
+      $scope.saveMessageID = function (key,title,post,id)
       {
-        console.log(key);
-        console.log(post + " " + id);
         $scope.key = key;
+        $scope.title = title;
         $scope.id = id;
         $scope.post = post;
       };
