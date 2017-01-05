@@ -12,12 +12,12 @@
 	- npm install -g gulp
 		
 3. On the command prompt run the following commands
-- cd `project-directory`
-- `bower install`
-- `npm install`
-- `gulp serve`
-- Open browser and go to localhost:9000
-- Login with the details: email - someone@gmail.com and password - Password2.
+	- cd `project-directory`
+	- `bower install`
+	- `npm install`
+	- `gulp serve`
+	- Open browser and go to localhost:9000
+	- Login with the details: email - someone@gmail.com and password - Password2.
 
 ## Technologies and Themes
 1. Firebase
