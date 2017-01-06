@@ -1,7 +1,16 @@
 'use strict';
 
 angular.module('yapp').
-controller('DatapageCtrl', function ($scope) {
+controller('EntriesCtrl', function ($scope, $location)
+{
+    var user = firebase.auth().currentUser;
+
+    if (!user)
+    {
+      $location.path('/login');
+      $scope.$apply();
+    }
+
     $scope.allPosts = null;
     $scope.allPostNull = false;
     $scope.id = null;
@@ -64,6 +73,10 @@ controller('DatapageCtrl', function ($scope) {
         var user = firebase.auth().currentUser;
         firebase.database().ref('/blogs/' + user.uid + '/' + $scope.id + '/').remove();
         $scope.allPosts.splice($scope.key,1);
+        if($scope.allPosts != null && $scope.allPosts.length == 0)
+        {
+          $scope.allPostNull = true;
+        }
       };
 
     $scope.getPostDate = function(epoch)

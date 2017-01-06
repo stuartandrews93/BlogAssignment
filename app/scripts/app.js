@@ -56,17 +56,17 @@ angular
             parent: 'dashboard',
             templateUrl: 'views/dashboard1/overview.ng.html'
           })
-          .state('reports', {
-            url: '/reports',
+          .state('newentry', {
+            url: '/newentry',
             parent: 'dashboard',
-            templateUrl: 'views/dashboard1/reports.ng.html',
-            controller: 'ReportsCtrl'
+            templateUrl: 'views/dashboard1/newentry.ng.html',
+            controller: 'NewEntryCtrl'
           })
-	        .state('datapage', {
-            url: '/datapage',
+	        .state('entries', {
+            url: '/entries',
             parent: 'dashboard',
-            templateUrl: 'views/dashboard1/datapage.ng.html',
-            controller: 'DatapageCtrl'
+            templateUrl: 'views/dashboard1/entries.ng.html',
+            controller: 'EntriesCtrl'
         });
 
   });

@@ -8,8 +8,16 @@
  * Controller of yapp
  */
 angular.module('yapp')
-  .controller('DashboardCtrl', function($scope, $state) {
+  .controller('DashboardCtrl', function($scope, $state, $location) {
     $scope.$state = $state;
+
+    var user = firebase.auth().currentUser;
+
+    if (!user)
+    {
+      $location.path('/login');
+      $scope.$apply();
+    }
 
     var user = firebase.auth().currentUser;
     $scope.test = null;

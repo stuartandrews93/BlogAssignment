@@ -3,14 +3,14 @@
 	<div class="jumbotron">
 		<div class="container">
 			<h1>New Blog Post</h1>
-			<form>
+            <form role='form' name='newForm' novalidate="">
                 <div class="form-group">
                     <input class="form-control" ng-model="title" rows="10" id="title" placeholder="Enter your blog title here!" required></input>
                 </div>
 				<div class="form-group">
 					<textarea class="form-control" ng-model="blog" rows="10" id="post" placeholder="So what's up? Add a new entry here..." required></textarea>
 				</div>
-				<button type="submit" ng-click="submit()" class="btn btn-default">Submit</button>
+                <a ui-sref="entries" ng-click="submit()" class="btn btn-default" ng-disabled="newForm.$invalid">Submit</a>
 			</form>
 		</div>
 	</div>

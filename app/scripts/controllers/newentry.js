@@ -1,11 +1,18 @@
 'use strict';
 
 angular.module('yapp')
-  .controller('ReportsCtrl', function($scope, $state)
+  .controller('NewEntryCtrl', function($scope, $state, $location)
     {
       $scope.$state = $state;
 
       var user = firebase.auth().currentUser;
+
+      if (!user)
+      {
+        $location.path('/login');
+        $scope.$apply();
+      }
+
       console.log(user.uid);
       $scope.list = [];
       $scope.blog = "";

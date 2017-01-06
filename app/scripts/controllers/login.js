@@ -8,7 +8,8 @@
  * Controller of yapp
  */
 angular.module('yapp')
-  .controller('LoginCtrl', function($scope, $location) {
+  .controller('LoginCtrl', function($scope, $location)
+  {
     $scope.loginFailed = false;
 
     $scope.submit = function(email, passwd) {

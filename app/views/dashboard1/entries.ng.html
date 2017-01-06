@@ -24,7 +24,7 @@
             <h3>Looks like you don't have any blog posts!</h3>
             <h4>Want to make one?</h4>
             <p>
-                <a ui-sref="reports" class="btn btn-primary">New Post</a>
+                <a ui-sref="newentry" class="btn btn-primary">New Post</a>
             </p>
         </div>
     </div>
@@ -60,18 +60,18 @@
                     <h4 class="modal-title" id="addDeviceModal2">Edit or Delete your post...</h4>
                 </div>
                 <div class="modal-body" style="width: 100%;">
-                    <form>
+                    <form role='form' name='editForm' novalidate="">
                         <div class="form-group">
-                            <input class="form-control" ng-model="title" rows="10" id="title" required></input>
+                            <input class="form-control" type="text" ng-model="title" rows="10" id="title" placeholder="Enter your blog title here!" required></input>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="10" ng-model="post" id="post" required></textarea>
+                            <textarea class="form-control" rows="10" ng-model="post" id="post" placeholder="So what's up? Add a new entry here..." required></textarea>
                         </div>
-                        <button type="submit" ng-click="submitRevised()" class="btn btn-default">Submit</button>
+                        <button type="submit" ng-click="submitRevised()" class="btn btn-default" ng-disabled="editForm.$invalid" data-dismiss="modal">Submit</button>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" ng-disabled="checked" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
